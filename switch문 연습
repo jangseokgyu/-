@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("평점을 입력하세요 : ");
+    int point = scan.nextInt();
+
+    switch (point) {
+      case 100 :
+       System.out.println("수석");
+       break;
+      case 80 :
+       System.out.println("차석");
+       break;
+      case 50 :
+       System.out.println("병신");
+       break;
+      case 30 :
+       System.out.println("쌀벌래");
+    }
+  }
+}
