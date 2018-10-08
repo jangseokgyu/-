@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int num = scan.nextInt();
+
+    System.out.println("0의 갯수구하기");
+
+    Calculator oho = new Calculator();
+
+    int a = oho.calculate(num);
+
+    System.out.println(a);
+  }
+}
+
+
+public class Calculator {
+  public int calculate(int num) {
+    String str = String.valueOf(num);
+    int len = str.length();
+    int i,num2=0;
+    for(i=0;i<len;i++)
+    {
+      if(str.charAt(i) == '0')
+        num2++;
+    }
+
+    return num2;
+  }
+}
+
+
