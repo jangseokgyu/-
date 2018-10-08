@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("평점을 입력하세요 : ");
+    double point = scan.nextDouble();
+    System.out.println("toeic점수를 입력하세요 : ");
+    int toeic = scan.nextInt();
+
+    if(point >=4.0 && toeic >=700)
+     System.out.println("면접만 봐~");
+    
+    if(point >= 3.5 && point <=4.0 && toeic>=700)
+     System.out.println("서류,면접 만 봐~");
+     
+    if(point>=3.0 && point<=3.5 && toeic>=700)
+     System.out.println("필기,서류,면접 보자");
+    
+    if(point<=3.0 || toeic<700)
+     System.out.println("꺼져주세요");
+
+  }
+}
