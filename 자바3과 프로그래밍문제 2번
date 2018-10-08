@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("이름을 입력하세요 :");
+    String name = scan.next();
+    System.out.println("생년월일 입력 yy/mm/dd");
+    String year = scan.next();
+
+    System.out.println("이름 :" + name);
+
+    String year2 = year.substring(0,2);
+
+    int newyear = Integer.valueOf(year2).intValue();
+
+    newyear += 2000;
+
+    String month = year.substring(3,5);
+    
+    String day = year.substring(6,8);
+
+    System.out.println("생일 :" + newyear + " 년\n" + month + " 월\n"+ day + " 일\n");
+  }
+}
