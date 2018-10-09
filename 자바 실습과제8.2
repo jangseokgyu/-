@@ -1,0 +1,112 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    Students stu1 = new Students("장석규");
+    
+    System.out.println("퀴즈 점수 : ");
+    stu1.setQuiz(scan.nextInt());
+
+    System.out.println("중간 점수 : ");
+    stu1.setMidterm(scan.nextInt());
+    
+    System.out.println("기말 점수 : ");
+    stu1.setFinalterm(scan.nextInt());
+
+    stu1.setScore();
+
+    System.out.println(stu1);
+
+    Students stu2 = new Students("이지은");
+    
+    System.out.println("퀴즈 점수 : ");
+    stu2.setQuiz(scan.nextInt());
+
+    System.out.println("중간 점수 : ");
+    stu2.setMidterm(scan.nextInt());
+    
+    System.out.println("기말 점수 : ");
+    stu2.setFinalterm(scan.nextInt());
+
+    stu2.setScore();
+
+    System.out.println(stu2);
+
+  }
+}
+
+import java.util.*;
+
+public class Students {
+
+  Scanner scan = new Scanner(System.in);
+  
+  private String name;
+  private int quiz;
+  private int midterm;
+  private int finalterm;
+  private String score;
+
+  public Students(String name) {
+    this.name = name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+  public void setQuiz(int quiz) {
+    if(quiz>100 || quiz <0) {
+      while(quiz>100 || quiz <0) {
+      System.out.println("다시입력하시오 :");
+      quiz = scan.nextInt();
+    }
+    }
+      this.quiz = quiz;
+  }
+  public void setMidterm(int midterm) {
+    if(midterm>100 || midterm <0) {
+    while(midterm>100 || midterm <0) {
+      System.out.println("다시입력하시오 :");
+      midterm = scan.nextInt();
+    }
+    }
+      this.midterm = midterm;
+  }
+  public void setFinalterm(int finalterm) {
+    if(finalterm>100 || finalterm <0) {
+    while(finalterm>100 || finalterm <0) {
+      System.out.println("다시입력하시오 :");
+      finalterm = scan.nextInt();
+    }
+    }
+      this.finalterm = finalterm;
+  }
+
+  public void setScore() {
+    double sum = quiz*0.2+midterm*0.3+finalterm*0.5;
+
+    if(sum >= 90.0)
+      score = "A";
+    else if(sum>=80.0 && sum<90.0)
+      score = "B";
+    else if(sum>=70.0 && sum<80.0)
+      score = "C";
+    else if(sum>=60.0 && sum<70.0)
+      score = "D";
+    else
+      score = "F";
+  }
+
+  public String toString() {
+    String str = "\n";
+    str += "name : " + name + "\n";
+    str += "quiz : " + quiz + "\n";
+    str += "midterm : "+midterm + "\n";
+    str += "finalterm : "+finalterm + "\n";
+    str += "score : " + score + "\n";
+
+    return str;
+  }
+
+
